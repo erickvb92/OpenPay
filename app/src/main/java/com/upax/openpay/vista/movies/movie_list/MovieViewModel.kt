@@ -17,6 +17,7 @@ class MovieViewModel : ViewModel() {
     val _error = MutableLiveData<String>()
     val _popular = MutableLiveData<kotlin.collections.List<Results>>()
     val _now = MutableLiveData<kotlin.collections.List<Results>?>()
+    val _top = MutableLiveData<kotlin.collections.List<Results>?>()
 
     fun getPopular() {
         _loading.postValue(true)
@@ -111,5 +112,51 @@ class MovieViewModel : ViewModel() {
         }
     }
 
+    fun getTop() {
+        _loading.postValue(true)
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                val response = Repository.getRepositoryApi().getRequestTop()
+                _loading.postValue(false)
+                if (response.isSuccessful && response.code() == 200) {
+                    val ServiceResponse = response.body() ?: null
+
+                    if (ServiceResponse != null) {
+                        Log.d(
+                            TAG,
+                            "DESCRIPCION DEL SERVICIO : ${ServiceResponse.results[0].title}"
+                        )
+                    }
+                    if (ServiceResponse != null) {
+
+                        val enums: Collection<Results> = ServiceResponse.results
+                        Log.d(TAG, "RESPONSE userObject size: ${enums.size}")
+                        val lista = ArrayList<Results>()
+                        var x = 0;
+                        enums.forEach { temp ->
+                            lista.add(temp)
+                        }
+
+                        Log.d(TAG, "RESPONSE lista.toList: ${lista.toList()}")
+                        _top.postValue(lista.toList())
+                        Log.d(TAG, "RESPONSE _messages: ${_top}")
+                    } else {
+                        Log.d(
+                            TAG,
+                            "RESPONSE ERROR "
+                        )
+                    }
+
+                } else
+                    _error.postValue("Error al obtener la información del servidor")
+            } catch (e: Exception) {
+                _now.postValue(null)
+                _loading.postValue(false)
+                _error.postValue("Error al obtener la información del servidor")
+                if (BuildConfig.DEBUG)
+                    Log.d(TAG, "Error: ${e.printStackTrace()}")
+            }
+        }
+    }
 }
 

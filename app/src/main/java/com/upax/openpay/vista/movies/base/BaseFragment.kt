@@ -1,8 +1,10 @@
 package com.upax.openpay.vista.movies.base
 import android.text.Editable
 import android.text.TextWatcher
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.fragment.app.Fragment
+import com.upax.openpay.R
 
 open class BaseFragment: Fragment() {
 
@@ -19,6 +21,21 @@ open class BaseFragment: Fragment() {
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
         })
+    }
+
+    private val dialogLoading by lazy {
+        val dialogAlertDialog = AlertDialog.Builder(requireContext())
+        dialogAlertDialog.setView(R.layout.loading)
+        dialogAlertDialog.setMessage("loading")
+        dialogAlertDialog.setCancelable(false)
+        dialogAlertDialog.create()
+    }
+    fun showLoading(isShowing: Boolean){
+        if (isShowing)
+            dialogLoading.show()
+        else
+            if (dialogLoading.isShowing)
+                dialogLoading.dismiss()
     }
 
 }

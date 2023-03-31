@@ -7,7 +7,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="100sp"
+        android:layout_marginTop="@dimen/dimen_100dp"
         android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
@@ -21,7 +21,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:padding="8dp">
+                android:padding="@dimen/dimen_10sp">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     style="@style/TitleModifyDataStyle"
@@ -29,10 +29,10 @@
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="200sp"
-                    android:layout_height="200sp"
+                    android:layout_width="@dimen/dimen_200dp"
+                    android:layout_height="@dimen/dimen_200dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/tron" />
+                    android:background="@mipmap/imagen" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/inputFilePath"
@@ -48,7 +48,7 @@
                         android:focusable="false"
                         android:hint="imagen..."
                         android:maxLength="250"
-                        android:padding="4dp" />
+                        android:padding="@dimen/dimen_6dp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -56,7 +56,7 @@
                     android:id="@+id/button_chose_file"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_margin="@dimen/dimen_10sp"
                     android:text="Cargar imagen" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>

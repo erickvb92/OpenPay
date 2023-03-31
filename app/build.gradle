@@ -117,4 +117,5 @@ dependencies {
     implementation "com.google.android.gms:play-services-location:$playServices_version"
     implementation "com.google.android.gms:play-services-maps:$maps_version"
     implementation "com.google.android.gms:play-services-places:$places_version"
+
 }

@@ -33,30 +33,30 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="50sp"
+                        android:layout_width="@dimen/dimen_0dp"
+                        android:layout_height="@dimen/dimen_50sp"
                         android:layout_weight="1"
                         android:background="@color/gray"
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="140sp"
-                            android:layout_height="50sp"
+                            android:layout_width="@dimen/dimen_140dp"
+                            android:layout_height="@dimen/dimen_50sp"
                             android:src="@drawable/tmdb" />
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="50sp"
+                        android:layout_width="@dimen/dimen_0dp"
+                        android:layout_height="@dimen/dimen_50sp"
                         android:layout_weight="1"
                         android:background="@color/gray"
                         android:gravity="right"
                         android:orientation="horizontal">
 
                         <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="50sp"
+                            android:layout_width="@dimen/dimen_0dp"
+                            android:layout_height="@dimen/dimen_50sp"
                             android:layout_weight="1"
                             android:background="@color/gray"
                             android:gravity="right"
@@ -75,16 +75,16 @@
         <FrameLayout
             android:id="@+id/fragment_content"
             android:layout_width="match_parent"
-            android:layout_marginBottom="70sp"
+            android:layout_marginBottom="@dimen/dimen_70"
             android:layout_height="wrap_content"
             tools:ignore="MissingConstraints" />
 
         <HorizontalScrollView
             android:id="@+id/main_hsv"
             android:layout_width="match_parent"
-            android:layout_height="70sp"
+            android:layout_height="@dimen/dimen_70"
             android:layout_gravity="bottom"
-            android:background="@color/blue"
+            android:background="@color/text_titles_blue"
             android:scrollbars="none"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -98,53 +98,80 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="70sp"
+                    android:layout_height="@dimen/dimen_70"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/perfil"
+                        android:layout_width="@dimen/dimen_40dp_top"
+                        android:layout_height="@dimen/dimen_40dp_top"
+                        android:layout_marginLeft="@dimen/dimen_30dp"
+                        android:layout_marginTop="@dimen/dimen_6dp"
+                        android:layout_marginRight="@dimen/dimen_30dp"
+                        android:background="@mipmap/perfil" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dimen_6dp"
+                        android:text="@string/perfil"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dimen_10dp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_70"
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/movie_db2"
-                        android:layout_width="40sp"
-                        android:layout_height="37dp"
-                        android:layout_marginLeft="30sp"
-                        android:layout_marginTop="5sp"
-                        android:layout_marginRight="30sp"
-                        android:background="@drawable/tron" />
+                        android:layout_width="@dimen/dimen_40dp_top"
+                        android:layout_height="@dimen/dimen_40dp_top"
+                        android:layout_marginLeft="@dimen/dimen_30sp"
+                        android:layout_marginTop="@dimen/dimen_6dp"
+                        android:layout_marginRight="@dimen/dimen_30sp"
+                        android:background="@mipmap/movie" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="5sp"
+                        android:layout_marginTop="@dimen/dimen_6dp"
                         android:text="@string/movie_db"
                         android:textColor="@color/white"
-                        android:textSize="8sp"
+                        android:textSize="@dimen/dimen_10sp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="70sp"
+                    android:layout_height="@dimen/dimen_70"
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/mapa2"
-                        android:layout_width="40sp"
-                        android:layout_height="40sp"
-                        android:layout_marginLeft="30sp"
-                        android:layout_marginTop="5sp"
-                        android:layout_marginRight="30sp"
-                        android:background="@drawable/tron" />
+                        android:layout_width="@dimen/dimen_40dp_top"
+                        android:layout_height="@dimen/dimen_40dp_top"
+                        android:layout_marginLeft="@dimen/dimen_30dp"
+                        android:layout_marginTop="@dimen/dimen_6dp"
+                        android:layout_marginRight="@dimen/dimen_30dp"
+                        android:background="@mipmap/mapa" />
 
                     <androidx.appcompat.widget.AppCompatTextView
 
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="5sp"
+                        android:layout_marginTop="@dimen/dimen_6dp"
                         android:text="@string/mapa"
                         android:textColor="@color/white"
-                        android:textSize="8sp"
+                        android:textSize="@dimen/dimen_10dp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -152,83 +179,57 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="70sp"
+                    android:layout_height="@dimen/dimen_70"
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/subir_imagen2"
-                        android:layout_width="40sp"
-                        android:layout_height="40sp"
-                        android:layout_marginLeft="30sp"
-                        android:layout_marginTop="5sp"
-                        android:layout_marginRight="30sp"
-                        android:background="@drawable/tron" />
+                        android:layout_width="@dimen/dimen_40dp_top"
+                        android:layout_height="@dimen/dimen_40dp_top"
+                        android:layout_marginLeft="@dimen/dimen_30dp"
+                        android:layout_marginTop="@dimen/dimen_6dp"
+                        android:layout_marginRight="@dimen/dimen_30dp"
+                        android:background="@mipmap/imagen" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="5sp"
+                        android:layout_marginTop="@dimen/dimen_6dp"
                         android:text="@string/subir_imagen"
                         android:textColor="@color/white"
-                        android:textSize="8sp"
+                        android:textSize="@dimen/dimen_10dp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="70sp"
+                    android:layout_height="@dimen/dimen_70"
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/pagina"
-                        android:layout_width="40sp"
-                        android:layout_height="40sp"
-                        android:layout_marginLeft="30sp"
-                        android:layout_marginTop="5sp"
-                        android:layout_marginRight="30sp"
-                        android:background="@drawable/tron" />
+                        android:layout_width="@dimen/dimen_40dp_top"
+                        android:layout_height="@dimen/dimen_40dp_top"
+                        android:layout_marginLeft="@dimen/dimen_30dp"
+                        android:layout_marginTop="@dimen/dimen_6dp"
+                        android:layout_marginRight="@dimen/dimen_30dp"
+                        android:background="@mipmap/info" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="5sp"
+                        android:layout_marginTop="@dimen/dimen_6dp"
                         android:text="Informacion"
                         android:textColor="@color/white"
-                        android:textSize="8sp"
+                        android:textSize="@dimen/dimen_10dp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="70sp"
-                    android:orientation="vertical">
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/contacto"
-                        android:layout_width="40sp"
-                        android:layout_height="40sp"
-                        android:layout_marginLeft="30sp"
-                        android:layout_marginTop="5sp"
-                        android:layout_marginRight="30sp"
-                        android:background="@drawable/tron" />
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="5sp"
-                        android:text="Acerca de.."
-                        android:textColor="@color/white"
-                        android:textSize="8sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-            </LinearLayout>
+                           </LinearLayout>
 
         </HorizontalScrollView>
 

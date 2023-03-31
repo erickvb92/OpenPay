@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="20sp"
+    android:layout_margin="@dimen/dimen_20sp"
     android:orientation="vertical">
 
     <LinearLayout
@@ -13,14 +13,14 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_view"
-            android:layout_width="200sp"
+            android:layout_width="@dimen/dimen_200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="@dimen/dimen_10sp"
+            android:layout_marginBottom="@dimen/dimen_10sp"
             app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="8dp"
-            app:elevation="4sp"
+            app:cardCornerRadius="@dimen/dimen_8sp"
+            app:elevation="@dimen/dimen_8sp"
             tools:ignore="MissingConstraints">
 
             <LinearLayout
@@ -31,7 +31,7 @@
                 <ImageView
                     android:id="@+id/imagen"
                     android:layout_width="match_parent"
-                    android:layout_height="252dp"
+                    android:layout_height="@dimen/dimen_250dp"
                     android:layout_gravity="center"
                     android:scaleType="centerCrop"
                     android:background="@android:drawable/screen_background_light_transparent"
@@ -48,24 +48,24 @@
                         android:id="@+id/titulo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginTop="2dp"
+                        android:layout_marginStart="@dimen/dimen_5dp"
+                        android:layout_marginTop="@dimen/dimen_2dp"
                         android:ellipsize="end"
                         android:maxLines="1"
                         android:text="-------"
                         android:textColor="@color/white"
-                        android:textSize="14sp"
+                        android:textSize="@dimen/dimen_14dp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginBottom="4dp"
+                        android:layout_marginStart="@dimen/dimen_5dp"
+                        android:layout_marginBottom="@dimen/dimen_5dp"
                         android:textColor="@color/white"
                         android:text="-------"
-                        android:textSize="12sp"
+                        android:textSize="@dimen/dimen_12sp"
                         android:textStyle="italic" />
 
 

@@ -16,9 +16,14 @@
     <dimen name="dimen_34dp">34dp</dimen>
     <dimen name="dimen_36dp">36dp</dimen>
     <dimen name="dimen_36sp">36sp</dimen>
-    <dimen name="dimen_40dp">40dp</dimen>
+    <dimen name="dimen_50sp">50sp</dimen>
+    <dimen name="dimen_40dp_top">40dp</dimen>
+    <dimen name="dimen_200dp">200dp</dimen>
+    <dimen name="dimen_250dp">250dp</dimen>
     <dimen name="dimen_100dp">100dp</dimen>
     <dimen name="dimen_140dp">140dp</dimen>
+    <dimen name="dimen_450dp">450dp</dimen>
+    <dimen name="dimen_550dp">550dp</dimen>
     <dimen name="dimen_neg_5dp">-5dp</dimen>
     <dimen name="margin_loading">20sp</dimen>
     <dimen name="text_error_size_msg">16sp</dimen>
@@ -28,8 +33,12 @@
     <dimen name="text_title_blue_size">20sp</dimen>
     <dimen name="dimen_28sp">28sp</dimen>
     <dimen name="dimen_60dp">60dp</dimen>
+    <dimen name="dimen_80sp">80sp</dimen>
+    <dimen name="dimen_70">70sp</dimen>
     <dimen name="dimen_20sp">20sp</dimen>
     <dimen name="dimen_10sp">10sp</dimen>
+    <dimen name="dimen_8sp">8sp</dimen>
     <dimen name="dimen_2dp">2dp</dimen>
+    <dimen name="dimen_0dp">0dp</dimen>
     <dimen name="size_icon_activation">36dp</dimen>
 </resources>

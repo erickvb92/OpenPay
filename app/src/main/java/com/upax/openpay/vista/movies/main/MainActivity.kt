@@ -1,17 +1,21 @@
 package com.upax.openpay.vista.movies.main
 
 import android.Manifest
+import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationCompat
 import androidx.lifecycle.ViewModelProvider
 import com.upax.openpay.R
 import com.upax.openpay.utils.ManagePermissions
 import com.upax.openpay.vista.movies.menu.MenuActivity
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -40,6 +44,19 @@ class MainActivity : AppCompatActivity() {
         iniciar.setOnClickListener {
             startActivity(Intent(this, MenuActivity::class.java))
         }
+
+        val mBuilder: NotificationCompat.Builder = NotificationCompat.Builder(this)
+            .setSmallIcon(com.upax.openpay.R.drawable.avatar) // notification icon
+            .setContentTitle("Simple notification") // title
+            .setContentText("Hello word") // body message
+            .setAutoCancel(true) // clear notification when clicked
+
+        val intent = Intent(this, MainActivity::class.java)
+        val pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT)
+        mBuilder.setContentIntent(pi)
+
+        val mNotificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+        mNotificationManager.notify(0, mBuilder.build())
     }
 
     // Receive the permissions request result

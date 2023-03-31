@@ -4,6 +4,10 @@
     android:drawable="@color/blue">
 
     <item
+        android:id="@+id/perfil"
+        android:title="@string/perfil" />
+
+    <item
         android:id="@+id/movie_db"
         android:title="@string/movie_db" />
 

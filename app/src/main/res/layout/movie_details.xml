@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10sp"
+    android:layout_margin="@dimen/dimen_10sp"
     android:background="@color/black"
     android:orientation="vertical">
 
@@ -17,13 +17,13 @@
             android:id="@+id/original_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginStart="@dimen/dimen_5dp"
+            android:layout_marginTop="@dimen/dimen_2dp"
             android:ellipsize="end"
             android:maxLines="1"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="@dimen/dimen_24sp"
             android:textStyle="bold" />
 
         <androidx.cardview.widget.CardView
@@ -31,10 +31,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="@dimen/dimen_10sp"
+            android:layout_marginBottom="@dimen/dimen_10sp"
             app:cardBackgroundColor="@color/white"
-            app:elevation="4sp">
+            app:elevation="@dimen/dimen_5dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -49,9 +49,9 @@
                     <ImageView
                         android:id="@+id/imagen_details"
                         android:layout_width="match_parent"
-                        android:layout_height="550sp"
+                        android:layout_height="@dimen/dimen_550dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/tron" />
+                        android:src="@mipmap/imagen" />
 
                 </LinearLayout>
 
@@ -67,53 +67,53 @@
                         android:id="@+id/original_language"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginBottom="4dp"
+                        android:layout_marginStart="@dimen/dimen_5dp"
+                        android:layout_marginBottom="@dimen/dimen_5dp"
                         android:textColor="@color/white"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/dimen_12sp" />
 
                     <TextView
                         android:id="@+id/popularity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginBottom="4dp"
+                        android:layout_marginStart="@dimen/dimen_5dp"
+                        android:layout_marginBottom="@dimen/dimen_5dp"
                         android:textColor="@color/white"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/dimen_12sp" />
 
                     <TextView
                         android:id="@+id/release_date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginBottom="4dp"
+                        android:layout_marginStart="@dimen/dimen_5dp"
+                        android:layout_marginBottom="@dimen/dimen_5dp"
                         android:textColor="@color/white"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/dimen_12sp" />
                     <TextView
                         android:id="@+id/vote_average"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginBottom="4dp"
+                        android:layout_marginStart="@dimen/dimen_5dp"
+                        android:layout_marginBottom="@dimen/dimen_5dp"
                         android:textColor="@color/white"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/dimen_12sp" />
 
                     <TextView
                         android:id="@+id/vote_count"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginBottom="4dp"
+                        android:layout_marginStart="@dimen/dimen_5dp"
+                        android:layout_marginBottom="@dimen/dimen_5dp"
                         android:textColor="@color/white"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/dimen_12sp" />
                     <TextView
                         android:id="@+id/overview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginBottom="4dp"
+                        android:layout_marginStart="@dimen/dimen_5dp"
+                        android:layout_marginBottom="@dimen/dimen_5dp"
                         android:textColor="@color/white"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/dimen_12sp" />
 
                 </LinearLayout>
             </RelativeLayout>
@@ -123,14 +123,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginStart="@dimen/dimen_5dp"
+            android:layout_marginTop="@dimen/dimen_5dp"
             android:ellipsize="end"
             android:maxLines="1"
             android:textAlignment="center"
             android:text="@string/video"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="@dimen/dimen_24sp"
             android:textStyle="bold" />
 
         <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
@@ -143,11 +143,11 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="match_parent"
-            android:layout_height="150sp"
-            android:layout_marginTop="50sp"
-            android:layout_marginBottom="50sp"
+            android:layout_height="@dimen/dimen_140dp"
+            android:layout_marginTop="@dimen/dimen_50sp"
+            android:layout_marginBottom="@dimen/dimen_50sp"
             android:background="@drawable/tmdb_azul"
-            android:textSize="34sp" />
+            android:textSize="@dimen/dimen_34dp" />
 
     </LinearLayout>
 

@@ -8,11 +8,11 @@
     android:backgroundTint="@color/gray"
     android:gravity="bottom"
     android:orientation="vertical"
-    android:paddingBottom="16dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="16dp"
-    android:layout_marginTop="30sp"
+    android:paddingBottom="@dimen/dimen_18sp"
+    android:paddingLeft="@dimen/dimen_18sp"
+    android:paddingRight="@dimen/dimen_18sp"
+    android:paddingTop="@dimen/dimen_18sp"
+    android:layout_marginTop="@dimen/dimen_30dp"
     >
 
     <LinearLayout
@@ -25,10 +25,10 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imgBL"
         android:layout_width="match_parent"
-        android:layout_height="80sp"
+        android:layout_height="@dimen/dimen_80sp"
         android:layout_gravity="center"
         android:src="@drawable/tron"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginLeft="@dimen/dimen_10sp" />
 
     </LinearLayout>
 

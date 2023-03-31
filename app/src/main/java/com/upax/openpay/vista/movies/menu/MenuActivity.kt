@@ -16,6 +16,7 @@ import com.upax.openpay.vista.movies.base.BaseFragment
 import com.upax.openpay.vista.movies.imagenes_fragment.ImagenesFragment
 import com.upax.openpay.vista.movies.mapa_fragment.MapaFragment
 import com.upax.openpay.vista.movies.movie_list.MovieFragment
+import com.upax.openpay.vista.movies.perfil.DetailPerfilFragment
 import kotlinx.android.synthetic.main.activity_main_navigationview.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.app_bar_main.view.*
@@ -25,6 +26,9 @@ import kotlinx.android.synthetic.main.nav_header_main.*
 class MenuActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener  {
     private lateinit var viewModel : MenuViewModel
 
+    private val perfilF : DetailPerfilFragment by lazy {
+        DetailPerfilFragment.newInstance()
+    }
     private val peliculasF : MovieFragment by lazy {
         MovieFragment.newInstance()
     }
@@ -60,6 +64,9 @@ class MenuActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         nav_view.setNavigationItemSelectedListener(this)
         changeFragment(FragmentShow.PELICULAS)
 
+        perfil.setOnClickListener {
+            changeFragment(FragmentShow.PERFIL)
+        }
         mapa2.setOnClickListener {
             changeFragment(FragmentShow.MAPA)
         }
@@ -70,12 +77,7 @@ class MenuActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             changeFragment(FragmentShow.IMAGENES)
         }
         pagina.setOnClickListener {
-            val uri: Uri = Uri.parse("https://upax.com.mx/")
-            val intent = Intent(Intent.ACTION_VIEW, uri)
-            startActivity(intent)
-        }
-        contacto.setOnClickListener {
-            val uri: Uri = Uri.parse("https://upax.com.mx/")
+            val uri: Uri = Uri.parse("https://openpay.mx/")
             val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
         }
@@ -92,6 +94,7 @@ class MenuActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             FragmentShow.PELICULAS -> peliculasF
             FragmentShow.MAPA -> mapaF
             FragmentShow.IMAGENES -> imagenesF
+            FragmentShow.PERFIL -> perfilF
         }
             launchFragmentTransaction(fragmentShow)
     }
@@ -116,6 +119,7 @@ class MenuActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
 
+            R.id.perfil -> changeFragment(FragmentShow.PERFIL)
             R.id.movie_db -> changeFragment(FragmentShow.PELICULAS)
             R.id.mapa -> changeFragment(FragmentShow.MAPA)
             R.id.subir_imagen -> changeFragment(FragmentShow.IMAGENES)
@@ -141,6 +145,7 @@ class MenuActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     }
 
     enum class FragmentShow {
+        PERFIL,
         PELICULAS,
         MAPA,
         IMAGENES

@@ -1,25 +1,34 @@
 package com.upax.openpay.vista.movies.movie_list
+
 import android.content.Context
+import android.content.Intent.getIntent
 import android.content.SharedPreferences
+import android.net.ConnectivityManager
+import android.os.Build
 import android.os.Bundle
+import android.preference.PreferenceManager
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RemoteViews
 import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.core.app.NotificationCompat
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.upax.openpay.model.Results
-import com.upax.openpay.vista.movies.base.BaseFragment
-import kotlinx.android.synthetic.main.movies_list.*
-import java.util.*
-import android.net.ConnectivityManager
-import android.preference.PreferenceManager
 import com.google.common.reflect.TypeToken
 import com.google.gson.Gson
 import com.upax.openpay.R
+import com.upax.openpay.model.Results
+import com.upax.openpay.vista.movies.base.BaseFragment
+import kotlinx.android.synthetic.main.movies_list.*
 import java.lang.reflect.Type
+import java.util.*
+
 
 class MovieFragment : BaseFragment() {
 
@@ -30,7 +39,7 @@ class MovieFragment : BaseFragment() {
     private lateinit var viewFragment: View
     private lateinit var PopularAdapter: AdapterPopular
     private lateinit var NowAdapter: AdapterNow
-
+    private lateinit var TopAdapter: AdapterTop
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         viewFragment = inflater.inflate(R.layout.movies_list, container, false)
 
@@ -38,6 +47,7 @@ class MovieFragment : BaseFragment() {
         return viewFragment
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
@@ -76,6 +86,24 @@ class MovieFragment : BaseFragment() {
 
         recyclerViewNow.adapter = NowAdapter
 
+
+        TopAdapter = AdapterTop(
+            requireActivity(),
+            arrayListOf(),
+            object : AdapterTop.NotificationEvent {
+                override fun onNotificationTouch(notification: Results) {
+
+                }
+            })
+
+        val mLayoutManager3 = LinearLayoutManager(requireActivity())
+        mLayoutManager3.orientation = LinearLayoutManager.HORIZONTAL
+        recyclerViewTop.layoutManager = mLayoutManager3
+        recyclerViewTop.itemAnimator = DefaultItemAnimator()
+
+        recyclerViewTop.adapter = TopAdapter
+
+        viewModel.getTop()
         viewModel.getPopular()
         viewModel.getNow()
         setObservers()
@@ -88,11 +116,18 @@ class MovieFragment : BaseFragment() {
                 NowAdapter.addList(list_now)
             }
 
+            var list_top =  getArrayList("lista_top")
+            if (list_top != null) {
+                TopAdapter.addList(list_top)
+            }
+
             var list_popular =  getArrayList("lista_popular")
             if (list_popular != null) {
                 PopularAdapter.addList(list_popular)
             }
-                    Toast.makeText(
+
+
+            Toast.makeText(
                         activity,
                         "No hay conexion, los ultimos valores se persisten",
                         Toast.LENGTH_SHORT
@@ -105,7 +140,7 @@ class MovieFragment : BaseFragment() {
     private fun setObservers(){
         viewModel._loading.observe(viewLifecycleOwner, Observer {
             val isLoading = it ?: return@Observer
-            //super.showLoading(isLoading)
+            super.showLoading(isLoading)
         })
         viewModel._popular.observe(viewLifecycleOwner, Observer {
             val mess = it ?: return@Observer
@@ -130,6 +165,19 @@ class MovieFragment : BaseFragment() {
                var list =  getArrayList("lista_now")
                 if (list != null) {
                     NowAdapter.addList(list)
+                }
+            }
+        })
+
+        viewModel._top.observe(viewLifecycleOwner, Observer {
+            val mess = it ?: return@Observer
+            if(mess!=null){
+                TopAdapter.addList(mess)
+                saveArrayList(mess as ArrayList<Results>, "lista_top")
+            }else{
+                var list =  getArrayList("lista_top")
+                if (list != null) {
+                    TopAdapter.addList(list)
                 }
             }
         })

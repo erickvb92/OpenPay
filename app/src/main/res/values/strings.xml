@@ -1,15 +1,17 @@
 <resources>
-    <string name="app_name">Movie db Upax</string>
+    <string name="app_name">Open pay</string>
     <string name="titulo">Welcome.</string>
-    <string name="subtitulo">Millions of movies, TV shows and people to discover. Explore now.</string>
+    <string name="subtitulo"> Explore now.</string>
     <string name="list_episodios">Lista de episodios</string>
     <string name="video">Video</string>
+    <string name="top">Top Rated</string>
     <string name="Playing_Now">Playing Now</string>
-    <string name="Iniciar">Iniciar Aplicación</string>
+    <string name="Iniciar">Iniciar</string>
     <string name="Most_Popular">Most Popular</string>
 
+    <string name="perfil">Perfil</string>
     <string name="movie_db">Peliculas</string>
-    <string name="mapa">Ubicacion en Mapa</string>
+    <string name="mapa">Mapa</string>
     <string name="subir_imagen">Subir Imagenes</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
