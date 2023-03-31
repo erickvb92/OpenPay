@@ -1,4 +1,4 @@
-![Image text](https://github.com/erickvb92/OpenPay/imagenes_readme/openpay.png)
+![Image text](https://github.com/erickvb92/OpenPay/blob/main/imagenes_readme/openpay.png)
 
 # ANDROID PROYECTO OPEN PAY 🚀
 
@@ -31,29 +31,27 @@ Tener instalado git previavente.
 
 # Imagenes de funcionamiento y desarrollo📦
 
-Para poder desplegarlo en el servidor es necesario tener instalado el Node JS.
-
 CAPTURAS DE PANTALLA DE LA APP
 
-![Image text](https://github.com/erickvb92/OpenPay/imagenes_readme/c1.png)
+![Image text](https://github.com/erickvb92/OpenPay/blob/main/imagenes_readme/c1.jpeg)
 
-![Image text](https://github.com/erickvb92/OpenPay/imagenes_readme/c2.png)
+![Image text](https://github.com/erickvb92/OpenPay/blob/main/imagenes_readme/c2.jpeg)
 
-![Image text](https://github.com/erickvb92/OpenPay/imagenes_readme/c3.png)
+![Image text](https://github.com/erickvb92/OpenPay/blob/main/imagenes_readme/c3.jpeg)
 
-![Image text](https://github.com/erickvb92/OpenPay/imagenes_readme/c4.png)
+![Image text](https://github.com/erickvb92/OpenPay/blob/main/imagenes_readme/c4.jpeg)
 
-![Image text](https://github.com/erickvb92/OpenPay/imagenes_readme/c5.png)
+![Image text](https://github.com/erickvb92/OpenPay/blob/main/imagenes_readme/c5.jpeg)
 
 CAPTURAS DE PANTALLA DE APP FIREBASE
 
-![Image text](https://github.com/erickvb92/OpenPay/imagenes_readme/f1.png)
+![Image text](https://github.com/erickvb92/OpenPay/blob/main/imagenes_readme/f1.png)
 
-![Image text](https://github.com/erickvb92/OpenPay/imagenes_readme/f2.png)
+![Image text](https://github.com/erickvb92/OpenPay/blob/main/imagenes_readme/f2.png)
 
-![Image text](https://github.com/erickvb92/OpenPay/imagenes_readme/f3.png)
+![Image text](https://github.com/erickvb92/OpenPay/blob/main/imagenes_readme/f3.png)
 
-![Image text](https://github.com/erickvb92/OpenPay/imagenes_readme/f4.png)
+![Image text](https://github.com/erickvb92/OpenPay/blob/main/imagenes_readme/f4.png)
 
 # Mejoras y comentarios 🚀
 
